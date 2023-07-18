@@ -1,2 +1,2 @@
 # curso-java-script
- Curso de Java Script
+ Curso de **Java Script**
