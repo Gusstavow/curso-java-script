@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Regionalidade</title>
+</head>
+
+<body>
+    <h1>Verificador de Regionalidade</h1>
+
+    <label for="id_pais">Seu Pais de Origem</label>
+   <input type="text" name="pais" id="id_pais">
+
+    <input type="button" value="Enviar" id="botao_enviar">
+
+    <div id="res">Resultado
+
+    </div>
+    <script>
+        var pais = document.querySelector("input#id_pais");
+        
+        var res = document.querySelector("div#res");
+        var botao = document.querySelector("input#botao_enviar");
+
+        botao.addEventListener("click", Enviar);
+
+        function Enviar() {
+            if (pais.value == "Brasil" || pais.value == "brasil") {
+                res.innerHTML = "Brasileiro!";
+
+            }else if(pais.value == "Argentina"){
+                res.innerHTML = "Argentino"
+            }
+        }
+
+    </script>
+</body>
+
+</html>

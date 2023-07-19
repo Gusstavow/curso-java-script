@@ -1,9 +1,14 @@
-var pais = "BR";
-console.log(`Vivendo em ${pais}`);
-if(pais == "BR"){
-    console.log("Brasileiro");
+var pais = document.querySelector("option.opcao");
+var res = document.querySelector("div#res");
+var botao = document.querySelector("input#botao_enviar");
 
-}else{
-    console.log("Voce e estrangeiro");
+botao.addEventListener("click", Enviar);
 
+function Enviar() {
+    if (pais.value == "BR") {
+        res.innerHTML = "Brasileiro!";
+
+    }
 }
+
+
