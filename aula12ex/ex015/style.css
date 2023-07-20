@@ -1,16 +1,58 @@
-body{
-background: rgb(147, 170, 245);
-font: normal 15pt Arial;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-header{
-    color: white;
-    text-align: center;
+
+body {
+    background-image: linear-gradient(to top, rgb(133, 215, 248), rgb(5, 47, 138));
+    font: normal 15pt Arial;
+    
 
 }
-header > h1{
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.438);
+
+body.mulher {
+    background-image: linear-gradient(to top, rgb(248, 133, 191), rgb(138, 5, 138));
+    font: normal 15pt Arial;
+
 }
-section{
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+p {
+    padding: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    /* background-color: aqua; */
+
+
+
+    height: 10vh;
+    border-bottom: 1px solid rgb(245, 245, 245);
+    width: 100vw;
+
+
+}
+
+header>h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.678);
+
+}
+
+section {
     background-color: white;
     border-radius: 10px;
     padding: 15px;
@@ -19,17 +61,25 @@ section{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397);
 
 }
-footer{
-    color: white;
-    text-align: center;
-    font-style: italic;
+
+div.space {
+    height: 200px;
+    width: 200px;
 
 }
 
-img{
+footer {
+    color: white;
+
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.616);
+
+}
+
+img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    
+
 
 }

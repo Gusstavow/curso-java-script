@@ -5,6 +5,7 @@ function Verificar() {
     var ano = date.getFullYear();
     var fano = document.getElementById("txtano")
     var res = document.getElementById("res");
+    var res2 = document.querySelector("div#res2");
 
     if (fano.value == 0 || Number(fano.value) > ano) {
         alert("[ERROR] verifique os dados e tente novamente!");
@@ -14,9 +15,12 @@ function Verificar() {
         var idade = ano - Number(fano.value);
         var genero = "";
         var img = document.createElement("img");
+        
         img.setAttribute("id", "foto")
 
         if (fsex[0].checked) {
+            document.body.removeAttribute("class", "mulher");
+            res2.innerHTML = ""
             genero = "Homem"
             if (idade >= 0 && idade < 10) {
                 //crianca
@@ -35,12 +39,16 @@ function Verificar() {
                 img.setAttribute("src", "./imgs/idosoH.jpg")
             } else if (idade > 90) {
                 img.setAttribute("src", "./imgs/esqueleto.jpg")
-
+                res2.innerHTML = "Voce tem certeza que digitou seu ano de nascimento correto? se sim, sugiro ir ao medico imediatamente!"
+             
             }
-            document.body.style.background = "rgb(73, 114, 250)"
+            // document.body.style.background = "rgb(73, 114, 250)";
+            
 
         } else {
+            res2.innerHTML = ""
             genero = "Mulher"
+            document.body.setAttribute("class", "mulher")
             if (idade >= 0 && idade < 10) {
                 //crianca
                 img.setAttribute("src", "./imgs/criancaM.jpg")
@@ -58,13 +66,14 @@ function Verificar() {
                 img.setAttribute("src", "./imgs/idosoM.jpg")
             }
             else if (idade > 90) {
-            img.setAttribute("src", "./imgs/esqueleto.jpg")
+                img.setAttribute("src", "./imgs/esqueleto.jpg")
+                res2.innerHTML = "Voce tem certeza que digitou seu ano de nascimento correto? se sim, sugiro ir ao medico imediatamente!"
 
             }
-        document.body.style.background = "rgb(245, 147, 237)"
+            // document.body.style.background = "rgb(245, 147, 237)"
+        }
+        res.style.textAlign = "center"
+        res.innerHTML = `Detectamos ${genero} com ${idade} anos.`;
+        res.appendChild(img);
     }
-    res.style.textAlign = "center"
-    res.innerHTML = `Detectamos ${genero} com ${idade} anos.`;
-    res.appendChild(img);
-}
 }
