@@ -1,38 +1,51 @@
-
+var botao = document.querySelector(".botao-enviar");
+botao.addEventListener("click", Calcular);
 
 function Calcular() {
 
-    botao.addEventListener("click", Calcular);
+    let inicio = document.querySelector("#inicio")
+    let fim = document.querySelector("#fim")
+    let passos = document.querySelector("#passos")
 
-    let inicio = document.querySelector("input#inicio")
-    let fim = document.querySelector("input#fim")
-    let passos = document.querySelector("input#passos")
+    let i = Number(inicio.value)
+    let f = Number(fim.value)
+    let p = Number(passos.value)
 
-    var res = document.querySelector("input#res")
-    var botao = document.querySelector("input.botao-enviar");
+    var res = document.querySelector("#res")
 
-    if(false) {
-        alert("Error: Faltam dados!");
-
+    if(p <= 0 || p > f){
+        alert("a contagem dos passos nao pode ser menor ou igual a 0 e tambem nao pode ser mais que o fim!");
+        res.innerHTML ="tente passos maiores que 0 e menores que o fim"
     }else{
-        res.innerHTML = `Contando:`
-        let i = Number(inicio.value)
-        let f = Number(fim.value)
-        let p = Number(passos.value)
-
-        for (let c = i; c < f; c += p) {
-
-            res.innerHTML += `${c}👌`
-    
+        if (inicio.value.length == 0 || fim.value.length == 0 || passos.value.length == 0) {
+            res.innerHTML = "Impossivel contar!"
+            alert("Error: Faltam dados!");
             
+    
+        } else {
+            res.innerText = "Contando:";
+          
+    
+            if (i < f) {
+                for (let c = i; c <= f; c += p) {
+    
+                    res.innerHTML += `${c}👌`
+    
+                }
+               
+    
+            } else {
+                for (let c = i; c >= f; c-= p) {
+                    res.innerHTML += `${c}👌`
+    
+                }
+               
+            }
+            res.innerHTML += `\u{1F3C1}`
     
     
         }
+
     }
-
-
-    
-
-
-
+        
 }
