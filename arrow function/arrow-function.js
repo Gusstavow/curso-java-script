@@ -4,4 +4,6 @@
     return a + b
 }
 
-(a, b) => a + b;
+
+let teste = (a, b) => a + b;
+console.log(teste(1 ,3));
