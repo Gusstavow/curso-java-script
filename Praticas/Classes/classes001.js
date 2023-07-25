@@ -30,7 +30,14 @@ class Carro {
     }
 
     set setCombustivel(quantidadeEmLitros) {
-        this._combustivel = quantidadeEmLitros;
+        if(quantidadeEmLitros < 0 || quantidadeEmLitros > 100){
+            alert("Valor invalido!!");
+
+        }else{
+            this._combustivel = quantidadeEmLitros;
+
+        }
+        
 
     }
 
@@ -39,8 +46,6 @@ class Carro {
 
     }
 
-
-
 }
 
 let carro1 = new Carro("bege", "100Km/h", "A");
@@ -48,9 +53,7 @@ let carro2 = new Carro("Vermelho", "200Km/h", "B")
 
 carro1._cor = "Preto"
 carro1.ligar()
-carro1.setCombustivel = 100
-
-
+carro1.setCombustivel = 90
 
 carro1.informacoes();
 carro2.informacoes();
