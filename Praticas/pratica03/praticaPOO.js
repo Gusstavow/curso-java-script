@@ -33,18 +33,47 @@ class Pessoa{
     }
 
     atualizarDados(nomeAtt,telefoneAtt,emailAtt){
-        this._nome =nomeAtt,
+        if(nomeAtt.length <=2){
+
+        }else{
+            this._nome =nomeAtt;
+
+        }
+        
         this._telefone = telefoneAtt;
-        this.email = emailAtt;
+        this._email = emailAtt;
 
     }
 }
 
-const Pessoa1 = new Pessoa("Gustav",)
+class Funcionario extends Pessoa{
+    constructor(nome,telefone,email,id){
+        super(nome,telefone,email)
+        this._id = id;
+
+    }
+
+    promovido(){
+        console.log(`${this._nome} foi Promovido!!`)
+    }
+
+    aposentar(){
+        console.log(`${this._nome} foi aposentado!!`)
+    }
+    
+
+}
+
+const pessoa1 = new Pessoa("Gustav",13996137823,"znsswz@gmail.com")
+const funcionario1 = new Funcionario("guilherme", 139966666, "Guilehrme@gamil.com",1)
 
 const Biscoito1 = new Biscoito(5,"Preto", "Chocolate");
 Biscoito1.setTamanho = 8
 
-Biscoito1.consumir(5)
-console.log(Biscoito1.getTamanho)
+funcionario1.promovido();
+funcionario1.aposentar();
+
+
+console.log(funcionario1._nome)
+
 
