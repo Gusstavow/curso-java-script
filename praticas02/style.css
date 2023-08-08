@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   }
+    main {
+        background-color: rgb(77, 76, 76);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+    
+
+    .d {
+        width: 200px;
+        height: 200px;
+        
+        margin: 20px;
+        transition: 1s;
+    }
+
+   .div01 {
+      background-color: rgba(250, 235, 215, 0.815);
+      
+    }
+
+    .div02 {
+        background-color: bisque;
+    }
+
+    .fundo-azul{
+        
+        background-color: aqua;
+       
+        transform: rotate(90deg)
+        
+        
+        
+    }
+
+   
